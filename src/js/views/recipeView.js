@@ -7,7 +7,6 @@ class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = 'We could not find that recipe. Please try another one!';
   _message = '';
-
   addHandlerRender(handler) {
     ['hashchange', 'load'].forEach(ev => window.addEventListener(ev, handler));
   }
@@ -30,6 +29,10 @@ class RecipeView extends View {
   }
 
   _generateMarkup() {
+    window.scrollTo({
+      top: this._parentElement.offsetTop,
+      behavior: 'smooth',
+    })
     return `
       <figure class="recipe__fig">
         <img src="${this._data.image}" alt="${

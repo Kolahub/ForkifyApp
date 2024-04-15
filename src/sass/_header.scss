@@ -10,6 +10,12 @@
     height: 4.6rem;
     display: block;
   }
+
+  @media only screen and (max-width: $bp-medium) { 
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.3rem;
+  }
 }
 
 .search {
@@ -53,6 +59,14 @@
   &__btn {
     font-weight: 600;
     font-family: inherit;
+  }
+  @media only screen and (max-width: $bp-small) {  
+    width: 100%;
+    justify-content: end;
+    // padding-left: -3rem;
+    &__field { 
+      width: 100%;
+    }
   }
 }
 
@@ -140,5 +154,9 @@
   .nav__btn--bookmarks:hover + & {
     visibility: visible;
     opacity: 1;
+  }
+
+  @media only screen and (max-width: $bp-small) {   
+    right: -13.5rem;
   }
 }
